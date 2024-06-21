@@ -1,4 +1,4 @@
-# Pricing component with toggle solution
+# Pricing component with toggle
 
 ![Design preview for the Pricing component with toggle coding challenge](./public/desktop-preview.jpg)
 
