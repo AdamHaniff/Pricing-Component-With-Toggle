@@ -1,0 +1,36 @@
+// ********* DESIGN SYSTEM *********
+
+// ************ COLORS ************
+$color-white-lilac: #f7f7fe;
+$color-storm-grey: #6e728e;
+$color-storm-grey-50-percent: rgba(110, 114, 142, 0.5);
+$color-slider: linear-gradient(225deg, #a2a7f0, #696edd);
+$color-white: #fff;
+
+// ********** FONT-FAMILY **********
+
+// ********* FONT-WEIGHTS *********
+
+// ************* BASE *************
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  // background:
+  // font-family:
+}
+
+html,
+body {
+  height: 100%;
+}
