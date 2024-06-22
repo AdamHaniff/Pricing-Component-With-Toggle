@@ -11,7 +11,61 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background: #f7f7fe;
+  font-family: "Montserrat", sans-serif;
+}
+
 html,
 body {
   height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+.subscription-plan {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 6.4rem;
+}
+.subscription-plan__header {
+  color: #6e728e;
+  font-size: 3.2rem;
+}
+.subscription-plan__types {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+.subscription-plan__type {
+  color: rgba(110, 114, 142, 0.5);
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+}
+.subscription-plan__toggle {
+  display: inline-block;
+  width: 5.6rem;
+  height: 3.2rem;
+  position: relative;
+}
+.subscription-plan__checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.subscription-plan__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(225deg, #a2a7f0, #696edd);
+  transition: 0.3s;
+  border-radius: 1.6rem;
 }/*# sourceMappingURL=main.css.map */

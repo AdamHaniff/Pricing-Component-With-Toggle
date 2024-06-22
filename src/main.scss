@@ -4,12 +4,22 @@
 $color-white-lilac: #f7f7fe;
 $color-storm-grey: #6e728e;
 $color-storm-grey-50-percent: rgba(110, 114, 142, 0.5);
+$color-storm-grey-25-percent: rgba(110, 114, 142, 0.25);
 $color-slider: linear-gradient(225deg, #a2a7f0, #696edd);
+$color-slider-hover: linear-gradient(66.8deg, #a2a7f0 0%, #696edd 100%);
 $color-white: #fff;
+$color-white-25-percent: rgba(255, 255, 255, 0.25);
+$color-white-50-percent: rgba(255, 255, 255, 0.5);
+$color-mulled-wine: #4a4d60;
+$color-btn-basic: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
+$color-professional: linear-gradient(135deg, #a2a7f0 0.06%, #696edd 100.06%);
+$color-moody-blue: #6d72de;
 
 // ********** FONT-FAMILY **********
+$font-montserrat: "Montserrat", sans-serif;
 
 // ********* FONT-WEIGHTS *********
+$fw-700: 700;
 
 // ************* BASE *************
 *,
@@ -26,11 +36,70 @@ html {
 }
 
 body {
-  // background:
-  // font-family:
+  background: $color-white-lilac;
+  font-family: $font-montserrat;
 }
 
 html,
 body {
   height: 100%;
+}
+
+// ******** MOBILE LAYOUTS ********
+
+// ********* 375px LAYOUT *********
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+// ******* SUBSCRIPTION-PLAN *******
+.subscription-plan {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 6.4rem;
+
+  &__header {
+    color: $color-storm-grey;
+    font-size: 3.2rem;
+  }
+
+  &__types {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__type {
+    color: $color-storm-grey-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+
+  &__toggle {
+    display: inline-block;
+    width: 5.6rem;
+    height: 3.2rem;
+    position: relative;
+  }
+
+  &__checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-slider;
+    transition: 0.3s;
+    border-radius: 1.6rem;
+  }
 }
