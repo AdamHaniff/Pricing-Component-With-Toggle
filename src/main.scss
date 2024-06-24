@@ -38,6 +38,7 @@ html {
 body {
   background: $color-white-lilac;
   font-family: $font-montserrat;
+  font-weight: $fw-700;
 }
 
 html,
@@ -63,6 +64,7 @@ body {
   margin-top: 6.4rem;
 
   &__header {
+    text-align: center;
     color: $color-storm-grey;
     font-size: 3.2rem;
   }
@@ -79,27 +81,74 @@ body {
     line-height: 2.8rem;
   }
 
-  &__toggle {
-    display: inline-block;
-    width: 5.6rem;
-    height: 3.2rem;
-    position: relative;
-  }
-
   &__checkbox {
     opacity: 0;
     width: 0;
     height: 0;
+
+    &:checked + .subscription-plan__slider::before {
+      transform: translateX(-2.3rem);
+    }
   }
 
   &__slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    display: inline-block;
+    width: 5.6rem;
+    height: 3.2rem;
     background: $color-slider;
-    transition: 0.3s;
     border-radius: 1.6rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 2.4rem;
+      background: $color-white;
+      position: absolute;
+      top: 0.4rem;
+      right: 0.4rem;
+      transition: 0.3s;
+    }
+  }
+}
+
+// ********* PRICING-PLAN *********
+.pricing-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+}
+
+.pricing-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  max-width: 32.7rem;
+  border-radius: 1rem;
+  background: $color-white;
+  box-shadow: 0 2rem 4rem 0 rgba(212, 210, 244, 0.5);
+  list-style: none;
+  padding: 3.1rem 2.9rem;
+
+  &__type-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__type {
+    color: $color-storm-grey;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+
+  &__price {
+    color: $color-mulled-wine;
+    font-size: 7.2rem;
+    line-height: 7.1rem;
+    letter-spacing: -0.216rem;
   }
 }

@@ -14,6 +14,7 @@ html {
 body {
   background: #f7f7fe;
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 html,
@@ -35,6 +36,7 @@ body {
   margin-top: 6.4rem;
 }
 .subscription-plan__header {
+  text-align: center;
   color: #6e728e;
   font-size: 3.2rem;
 }
@@ -48,24 +50,66 @@ body {
   font-size: 1.5rem;
   line-height: 2.8rem;
 }
-.subscription-plan__toggle {
-  display: inline-block;
-  width: 5.6rem;
-  height: 3.2rem;
-  position: relative;
-}
 .subscription-plan__checkbox {
   opacity: 0;
   width: 0;
   height: 0;
 }
+.subscription-plan__checkbox:checked + .subscription-plan__slider::before {
+  transform: translateX(-2.3rem);
+}
 .subscription-plan__slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: inline-block;
+  width: 5.6rem;
+  height: 3.2rem;
   background: linear-gradient(225deg, #a2a7f0, #696edd);
-  transition: 0.3s;
   border-radius: 1.6rem;
+  position: relative;
+}
+.subscription-plan__slider::before {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 2.4rem;
+  background: #fff;
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  transition: 0.3s;
+}
+
+.pricing-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+}
+
+.pricing-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  max-width: 32.7rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 2rem 4rem 0 rgba(212, 210, 244, 0.5);
+  list-style: none;
+  padding: 3.1rem 2.9rem;
+}
+.pricing-plan__type-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+.pricing-plan__type {
+  color: #6e728e;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+.pricing-plan__price {
+  color: #4a4d60;
+  font-size: 7.2rem;
+  line-height: 7.1rem;
+  letter-spacing: -0.216rem;
 }/*# sourceMappingURL=main.css.map */
