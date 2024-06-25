@@ -54,6 +54,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 8rem;
+  padding-bottom: 7.1rem;
 }
 
 // ******* SUBSCRIPTION-PLAN *******
@@ -151,4 +152,40 @@ body {
     line-height: 7.1rem;
     letter-spacing: -0.216rem;
   }
+
+  &__features {
+    list-style: none;
+    border-top: 0.1rem solid $color-storm-grey-25-percent;
+    padding-top: 1.2rem;
+    text-align: center;
+
+    & .pricing-plan__feature:not(:first-child) {
+      padding-top: 1.2rem;
+    }
+  }
+
+  &__feature {
+    color: $color-storm-grey;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    border-bottom: 0.1rem solid $color-storm-grey-25-percent;
+    padding-bottom: 1.2rem;
+  }
+
+  &__btn {
+    border: none;
+    height: 4.4rem;
+    border-radius: 0.6rem;
+    background: $color-btn-basic;
+    color: $color-white;
+    font-family: $font-montserrat;
+    font-size: 1.3rem;
+    letter-spacing: 0.1393rem;
+    text-transform: uppercase;
+  }
+}
+
+// * CLASSES USED WITH JAVASCRIPT *
+.professional-pricing-plan {
+  background: $color-professional;
 }
