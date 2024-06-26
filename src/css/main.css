@@ -142,6 +142,20 @@ body {
   text-transform: uppercase;
 }
 
-.professional-pricing-plan {
+.professional-plan {
   background: linear-gradient(135deg, #a2a7f0 0.06%, #696edd 100.06%);
+}
+.professional-plan__color {
+  color: #fff;
+}
+.professional-plan__features {
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
+}
+.professional-plan__feature {
+  color: #fff;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25);
+}
+.professional-plan__btn {
+  background: #fff;
+  color: #6d72de;
 }/*# sourceMappingURL=main.css.map */

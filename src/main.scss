@@ -186,6 +186,24 @@ body {
 }
 
 // * CLASSES USED WITH JAVASCRIPT *
-.professional-pricing-plan {
+.professional-plan {
   background: $color-professional;
+
+  &__color {
+    color: $color-white;
+  }
+
+  &__features {
+    border-top: 0.1rem solid $color-white-25-percent;
+  }
+
+  &__feature {
+    color: $color-white;
+    border-bottom: 0.1rem solid $color-white-25-percent;
+  }
+
+  &__btn {
+    background: $color-white;
+    color: $color-moody-blue;
+  }
 }

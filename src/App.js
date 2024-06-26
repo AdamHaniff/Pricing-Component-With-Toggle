@@ -58,30 +58,65 @@ function PricingPlansList() {
 }
 
 function PricingPlan({ plan }) {
+  const isProfessional = plan.plan === "Professional";
+
   return (
-    <li className="pricing-plan">
+    <li className={`pricing-plan ${isProfessional ? "professional-plan" : ""}`}>
       <div className="pricing-plan__type-price">
-        <span className="pricing-plan__type">{plan.plan}</span>
-        <span className="pricing-plan__price">{plan.monthlyPrice}</span>
+        <span
+          className={`pricing-plan__type ${
+            isProfessional ? "professional-plan__color" : ""
+          }`}
+        >
+          {plan.plan}
+        </span>
+        <span
+          className={`pricing-plan__price ${
+            isProfessional ? "professional-plan__color" : ""
+          }`}
+        >
+          {plan.monthlyPrice}
+        </span>
       </div>
-      <PlanFeaturesList plan={plan} />
-      <button className="pricing-plan__btn" type="button">
+      <PlanFeaturesList plan={plan} isProfessional={isProfessional} />
+      <button
+        className={`pricing-plan__btn ${
+          isProfessional ? "professional-plan__btn" : ""
+        }`}
+        type="button"
+      >
         Learn More
       </button>
     </li>
   );
 }
 
-function PlanFeaturesList({ plan }) {
+function PlanFeaturesList({ plan, isProfessional }) {
   return (
-    <ul className="pricing-plan__features">
+    <ul
+      className={`pricing-plan__features ${
+        isProfessional ? "professional-plan__features" : ""
+      }`}
+    >
       {plan.features.map((feature, index) => (
-        <PlanFeature key={index} feature={feature} />
+        <PlanFeature
+          key={index}
+          feature={feature}
+          isProfessional={isProfessional}
+        />
       ))}
     </ul>
   );
 }
 
-function PlanFeature({ feature }) {
-  return <li className="pricing-plan__feature">{feature}</li>;
+function PlanFeature({ feature, isProfessional }) {
+  return (
+    <li
+      className={`pricing-plan__feature ${
+        isProfessional ? "professional-plan__feature" : ""
+      }`}
+    >
+      {feature}
+    </li>
+  );
 }
