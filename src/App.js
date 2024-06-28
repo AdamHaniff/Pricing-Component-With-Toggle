@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const pricingPlans = [
   {
     id: 1,
@@ -23,22 +25,36 @@ const pricingPlans = [
 ];
 
 export default function App() {
+  const [isAnnuallyChecked, setIsAnnuallyChecked] = useState(false);
+
+  function handleCheckboxChange() {
+    setIsAnnuallyChecked((annuallyChecked) => !annuallyChecked);
+  }
+
   return (
     <div className="app">
-      <SubscriptionPlan />
+      <SubscriptionPlan
+        isAnnuallyChecked={isAnnuallyChecked}
+        onCheckboxChange={handleCheckboxChange}
+      />
       <PricingPlansList />
     </div>
   );
 }
 
-function SubscriptionPlan() {
+function SubscriptionPlan({ isAnnuallyChecked, onCheckboxChange }) {
   return (
     <div className="subscription-plan">
       <h1 className="subscription-plan__header">Our Pricing</h1>
       <div className="subscription-plan__types">
         <span className="subscription-plan__type">Annually</span>
         <label className="subscription-plan__toggle">
-          <input className="subscription-plan__checkbox" type="checkbox" />
+          <input
+            className="subscription-plan__checkbox"
+            type="checkbox"
+            checked={isAnnuallyChecked}
+            onChange={onCheckboxChange}
+          />
           <span className="subscription-plan__slider"></span>
         </label>
         <span className="subscription-plan__type">Monthly</span>
