@@ -27,7 +27,7 @@ const pricingPlans = [
 export default function App() {
   const [isAnnuallyChecked, setIsAnnuallyChecked] = useState(false);
 
-  function handleCheckboxChange() {
+  function handlePlanChange() {
     setIsAnnuallyChecked((annuallyChecked) => !annuallyChecked);
   }
 
@@ -35,14 +35,14 @@ export default function App() {
     <div className="app">
       <SubscriptionPlan
         isAnnuallyChecked={isAnnuallyChecked}
-        onCheckboxChange={handleCheckboxChange}
+        onPlanChange={handlePlanChange}
       />
-      <PricingPlansList />
+      <PricingPlansList isAnnuallyChecked={isAnnuallyChecked} />
     </div>
   );
 }
 
-function SubscriptionPlan({ isAnnuallyChecked, onCheckboxChange }) {
+function SubscriptionPlan({ isAnnuallyChecked, onPlanChange }) {
   return (
     <div className="subscription-plan">
       <h1 className="subscription-plan__header">Our Pricing</h1>
@@ -53,7 +53,7 @@ function SubscriptionPlan({ isAnnuallyChecked, onCheckboxChange }) {
             className="subscription-plan__checkbox"
             type="checkbox"
             checked={isAnnuallyChecked}
-            onChange={onCheckboxChange}
+            onChange={onPlanChange}
           />
           <span className="subscription-plan__slider"></span>
         </label>
@@ -63,17 +63,21 @@ function SubscriptionPlan({ isAnnuallyChecked, onCheckboxChange }) {
   );
 }
 
-function PricingPlansList() {
+function PricingPlansList({ isAnnuallyChecked }) {
   return (
     <ul className="pricing-plans">
       {pricingPlans.map((plan) => (
-        <PricingPlan key={plan.id} plan={plan} />
+        <PricingPlan
+          key={plan.id}
+          plan={plan}
+          isAnnuallyChecked={isAnnuallyChecked}
+        />
       ))}
     </ul>
   );
 }
 
-function PricingPlan({ plan }) {
+function PricingPlan({ plan, isAnnuallyChecked }) {
   const isProfessional = plan.plan === "Professional";
 
   return (
@@ -91,7 +95,7 @@ function PricingPlan({ plan }) {
             isProfessional ? "professional-plan__color" : ""
           }`}
         >
-          {plan.monthlyPrice}
+          {isAnnuallyChecked ? plan.yearlyPrice : plan.monthlyPrice}
         </span>
       </div>
       <PlanFeaturesList plan={plan} isProfessional={isProfessional} />
