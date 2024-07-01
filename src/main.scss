@@ -134,6 +134,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 3.25rem;
+  padding: 0 2.4rem;
 }
 
 .pricing-plan {
@@ -197,6 +198,16 @@ body {
     font-size: 1.3rem;
     letter-spacing: 0.1393rem;
     text-transform: uppercase;
+  }
+}
+
+// ***** 320px - 374px LAYOUT *****
+@media only screen and (max-width: 23.375em) {
+  // ******** PRICING-PLAN ********
+  .pricing-plan {
+    &__price {
+      font-size: 5.6rem;
+    }
   }
 }
 

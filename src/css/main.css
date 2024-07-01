@@ -97,6 +97,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 3.25rem;
+  padding: 0 2.4rem;
 }
 
 .pricing-plan {
@@ -156,6 +157,11 @@ body {
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 23.375em) {
+  .pricing-plan__price {
+    font-size: 5.6rem;
+  }
+}
 .professional-plan {
   background: linear-gradient(135deg, #a2a7f0 0.06%, #696edd 100.06%);
 }
