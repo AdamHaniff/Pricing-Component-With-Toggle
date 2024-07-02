@@ -134,15 +134,13 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 3.25rem;
-  padding: 0 2.4rem;
 }
 
 .pricing-plan {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  max-width: 32.7rem;
-  width: 100%;
+  width: clamp(272px, calc(272px + (55 * ((100vw - 320px) / 55))), 327px);
   border-radius: 1rem;
   background: $color-white;
   box-shadow: 0 2rem 4rem 0 rgba(212, 210, 244, 0.5);
@@ -164,7 +162,7 @@ body {
 
   &__price {
     color: $color-mulled-wine;
-    font-size: 7.2rem;
+    font-size: clamp(56px, calc(56px + (16 * ((100vw - 320px) / 55))), 72px);
     line-height: 7.1rem;
     letter-spacing: -0.216rem;
   }
@@ -201,13 +199,25 @@ body {
   }
 }
 
-// ***** 320px - 374px LAYOUT *****
-@media only screen and (max-width: 23.375em) {
-  // ******** PRICING-PLAN ********
-  .pricing-plan {
-    &__price {
-      font-size: 5.6rem;
+// ********* TABLET LAYOUT *********
+
+// ********** 768px LAYOUT **********
+@media only screen and (min-width: 48em) {
+  .app {
+    &::before {
+      right: 0;
     }
+  }
+}
+
+// ********* 1150px LAYOUT *********
+@media only screen and (min-width: 71.875em) {
+  // ********* PRICING-PLAN *********
+  .pricing-plans {
+    flex-direction: row;
+    align-items: initial;
+    justify-content: center;
+    gap: initial;
   }
 }
 
