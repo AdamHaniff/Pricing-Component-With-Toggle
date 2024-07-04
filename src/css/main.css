@@ -103,7 +103,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  width: clamp(272px, 272px + 55 * (100vw - 320px) / 55, 327px);
+  width: clamp(27.2rem, 27.2rem + 55 * (100vw - 32rem) / 55, 32.7rem);
   border-radius: 1rem;
   background: #fff;
   box-shadow: 0 2rem 4rem 0 rgba(212, 210, 244, 0.5);
@@ -123,7 +123,7 @@ body {
 }
 .pricing-plan__price {
   color: #4a4d60;
-  font-size: clamp(56px, 56px + 16 * (100vw - 320px) / 55, 72px);
+  font-size: clamp(5.6rem, 5.6rem + 16 * (100vw - 32rem) / 55, 7.2rem);
   line-height: 7.1rem;
   letter-spacing: -0.216rem;
 }
@@ -189,7 +189,7 @@ body {
   }
   .pricing-plan {
     padding: 3.1rem;
-    width: clamp(327px, 327px + 23 * (100vw - 1150px) / 290, 350px);
+    width: clamp(32.7rem, 32.7rem + 23 * (100vw - 115rem) / 290, 35rem);
   }
 }
 .professional-plan {

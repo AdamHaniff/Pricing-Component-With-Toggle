@@ -140,7 +140,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  width: clamp(272px, calc(272px + (55 * ((100vw - 320px) / 55))), 327px);
+  width: clamp(27.2rem, calc(27.2rem + (55 * ((100vw - 32rem) / 55))), 32.7rem);
   border-radius: 1rem;
   background: $color-white;
   box-shadow: 0 2rem 4rem 0 rgba(212, 210, 244, 0.5);
@@ -162,7 +162,11 @@ body {
 
   &__price {
     color: $color-mulled-wine;
-    font-size: clamp(56px, calc(56px + (16 * ((100vw - 320px) / 55))), 72px);
+    font-size: clamp(
+      5.6rem,
+      calc(5.6rem + (16 * ((100vw - 32rem) / 55))),
+      7.2rem
+    );
     line-height: 7.1rem;
     letter-spacing: -0.216rem;
   }
@@ -247,9 +251,9 @@ body {
   .pricing-plan {
     padding: 3.1rem;
     width: clamp(
-      327px,
-      calc(327px + (350 - 327) * ((100vw - 1150px) / (1440 - 1150))),
-      350px
+      32.7rem,
+      calc(32.7rem + (350 - 327) * ((100vw - 115rem) / (1440 - 1150))),
+      35rem
     );
   }
 }
