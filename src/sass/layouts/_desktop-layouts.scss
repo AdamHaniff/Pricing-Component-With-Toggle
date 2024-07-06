@@ -1,0 +1,54 @@
+// ******** DESKTOP LAYOUTS ********
+
+// ********* 1150px LAYOUT *********
+@media only screen and (min-width: 71.875em) {
+  .app {
+    gap: 6.45rem;
+    padding-bottom: 10.35rem;
+
+    &::before {
+      top: 0;
+      right: -12rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 35.3rem;
+      height: 30.4rem;
+      background-image: url("/public/bg-bottom.svg");
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+
+  // ********* PRICING-PLAN *********
+  .pricing-plans {
+    flex-direction: row;
+    justify-content: center;
+    gap: initial;
+
+    .pricing-plan:nth-child(2) {
+      padding: 5.45rem 3.1rem;
+    }
+  }
+
+  .pricing-plan {
+    padding: 3.1rem;
+    width: clamp(
+      32.7rem,
+      calc(32.7rem + (350 - 327) * ((100vw - 115rem) / (1440 - 1150))),
+      35rem
+    );
+  }
+}
+
+// ********* 1440px LAYOUT *********
+@media only screen and (min-width: 90em) {
+  .app {
+    &::before {
+      right: 0;
+    }
+  }
+}

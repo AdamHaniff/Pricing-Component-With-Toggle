@@ -1,0 +1,32 @@
+// ****** DESKTOP HOVER STATES ******
+
+// ******* 992px MEDIA QUERY *******
+@media only screen and (min-width: 62em) {
+  // ****** SUBSCRIPTION-PLAN ******
+  .subscription-plan {
+    &__slider:hover::after {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+
+  // ********* PRICING-PLAN *********
+  .pricing-plans {
+    .pricing-plan:nth-child(2) {
+      .pricing-plan__btn:hover {
+        background: transparent;
+        color: $color-white;
+        border: 0.1rem solid $color-white;
+      }
+    }
+  }
+
+  .pricing-plan {
+    &__btn:hover {
+      cursor: pointer;
+      background: $color-white;
+      color: $color-moody-blue;
+      border: 0.1rem solid $color-moody-blue;
+    }
+  }
+}

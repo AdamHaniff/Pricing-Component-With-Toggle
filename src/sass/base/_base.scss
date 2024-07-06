@@ -1,0 +1,28 @@
+// ************* BASE *************
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-white-lilac;
+  font-family: $font-montserrat;
+  font-weight: $fw-700;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.app {
+  min-height: 100vh;
+}

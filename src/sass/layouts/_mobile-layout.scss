@@ -1,0 +1,169 @@
+// ********* MOBILE LAYOUT *********
+
+// ********* 375px LAYOUT *********
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  padding-bottom: 7.1rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 37.5rem;
+    height: 65.8rem;
+    background-image: url("/public/bg-top.svg");
+    position: absolute;
+    top: -3.5rem;
+    right: -19.5rem;
+    z-index: -1;
+  }
+}
+
+// ******* SUBSCRIPTION-PLAN *******
+.subscription-plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 6.4rem;
+
+  &__header {
+    color: $color-storm-grey;
+    font-size: 3.2rem;
+  }
+
+  &__types {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__type {
+    color: $color-storm-grey-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+
+  &__checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .subscription-plan__slider::before {
+      transform: translateX(-2.3rem);
+    }
+  }
+
+  &__slider {
+    display: inline-block;
+    width: 5.6rem;
+    height: 3.2rem;
+    background: $color-slider;
+    border-radius: 1.6rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 2.4rem;
+      background: $color-white;
+      position: absolute;
+      top: 0.4rem;
+      right: 0.4rem;
+      transition: 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-white;
+      opacity: 0;
+      border-radius: 1.6rem;
+      transition: opacity 0.3s;
+    }
+  }
+}
+
+// ********* PRICING-PLAN *********
+.pricing-plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.25rem;
+}
+
+.pricing-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: clamp(27.2rem, calc(27.2rem + (55 * ((100vw - 32rem) / 55))), 32.7rem);
+  border-radius: 1rem;
+  background: $color-white;
+  box-shadow: 0 2rem 4rem 0 rgba(212, 210, 244, 0.5);
+  list-style: none;
+  padding: 3.1rem 2.9rem;
+
+  &__type-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__type {
+    color: $color-storm-grey;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+
+  &__price {
+    color: $color-mulled-wine;
+    font-size: clamp(
+      5.6rem,
+      calc(5.6rem + (16 * ((100vw - 32rem) / 55))),
+      7.2rem
+    );
+    line-height: 7.1rem;
+    letter-spacing: -0.216rem;
+  }
+
+  &__features {
+    list-style: none;
+    border-top: 0.1rem solid $color-storm-grey-25-percent;
+    padding-top: 1.2rem;
+    text-align: center;
+
+    .pricing-plan__feature:not(:first-child) {
+      padding-top: 1.2rem;
+    }
+  }
+
+  &__feature {
+    color: $color-storm-grey;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    border-bottom: 0.1rem solid $color-storm-grey-25-percent;
+    padding-bottom: 1.2rem;
+  }
+
+  &__btn {
+    border: none;
+    height: 4.4rem;
+    border-radius: 0.6rem;
+    background: $color-btn-basic;
+    color: $color-white;
+    font-family: $font-montserrat;
+    font-size: 1.3rem;
+    letter-spacing: 0.1393rem;
+    text-transform: uppercase;
+  }
+}
